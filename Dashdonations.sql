@@ -36,6 +36,8 @@ A: Yes, because they may have started or stopped paying tax, so I need them to c
 Q: Do you receive a donation from every person that gets your letter?
 A: I wish! I only record those that have donated though.
 
+I would need a table created where the following info can be organised: the name of the donor, the address, the amount they donated, which year and season the donation was made and finally can I claim GiftAid on this donation.
+
 
 Sample Data:
 
