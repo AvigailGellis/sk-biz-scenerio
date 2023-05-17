@@ -16,6 +16,6 @@ create table dbo.Donor(
     Season varchar(6) not null constraint ck_Donor_Season_must_be_autumn_or_spring check(Season in('Autumn', 'Spring')),
     GiftAid bit not null,
     constraint u_Donor_FirstName_LastName unique(FirstName, LastName),
-    constraint u_Donor_Address_Year unique(Address, Year)
+    constraint u_Donor_Address_Year_Season unique(Address, Year, Season)
 )
 go
