@@ -4,10 +4,10 @@ Sorry, this probably requires some further explanation: In the UK the first part
 while the complete postcode is unique per few houses.
  I want a report on the area, as opposed to a list of addresses. Thanks in advance.
 */
-select TotalPerPostalCode = sum(d.DonationAmount), substring(d.PostalCode,1,3)
+select TotalPerPostalCode = sum(d.DonationAmount), PostalCode = substring(d.PostalCode,1, charindex(' ', d.PostalCode))
 from donor d 
 where d.DonationAmount <> 5000
-group by substring(d.PostalCode,1,3)
+group by substring(d.PostalCode,1, charindex(' ', d.PostalCode))
 
 --2. Which years and seasons were my mailings most succesful. (Give the top 3)  I want to see if its the years that I included a freebie. 
 select top 3 TotalDonations =  sum(d.DonationAmount), d.year, d.season
